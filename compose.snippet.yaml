@@ -1,0 +1,8 @@
+# Merge into your EXISTING service. This is not a complete deployment file.
+services:
+  calibre-web-automated:
+    environment:
+      # Supply in the Compose project's .env; empty means public-only search.
+      - NOVELIA_ACCESS_TOKEN=${NOVELIA_ACCESS_TOKEN:-}
+    volumes:
+      - ./calibre/plugins/folder/calibre-web-novelia/novelia.py:/app/calibre-web-automated/cps/metadata_provider/novelia.py:ro
